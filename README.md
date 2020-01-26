@@ -36,3 +36,13 @@ Config Example:
 	c = !git add --all && git commit -m 
 	l = !git log --pretty=format:'%C(blue)%h %C(red)%d%C(yellow)%s - %C(cyan)%cn,%C(green) %cr '
 ```
+
+- Use git-commit-msg-linter to follow some of the commit patters in https://www.conventionalcommits.org/en/v1.0.0/
+
+### Typescript configurations
+
+- "outDir": "./dist" : folder where typescript will output compiled js
+- "module": "CommonJS" : allow users to use import syntax 
+- "target": "es2019": generate code with ecmascript 2019 standard
+- "esModuleInterop": true : allow modules in differnt standards to work
+- "allowJs": true allow javascript
