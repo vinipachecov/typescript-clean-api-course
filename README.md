@@ -46,3 +46,17 @@ Config Example:
 - "target": "es2019": generate code with ecmascript 2019 standard
 - "esModuleInterop": true : allow modules in differnt standards to work
 - "allowJs": true allow javascript
+
+
+tsconfig.json file
+```
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "module": "CommonJS",
+        "target": "es2019",
+        "esModuleInterop": true,
+        "allowJs": true
+    }
+}
+```
