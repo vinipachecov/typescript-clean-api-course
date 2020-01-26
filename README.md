@@ -14,3 +14,25 @@ This will open the vscode editor to edit git configs.
 
 If you set code as your default option, don't forget to set flag --wait to avoid blank screen problems with vscode
 editor = code --wait 
+
+
+Git log configs:
+
+H: full hash
+h: short hash
+%d: branch and tag references
+%s: message
+%cn: commiter name
+%cr: commiter date
+%C: color function
+
+Config Example:
+
+```
+[core]
+	editor = code --wait
+[alias]
+	s = !git status -s
+	c = !git add --all && git commit -m 
+	l = !git log --pretty=format:'%C(blue)%h %C(red)%d%C(yellow)%s - %C(cyan)%cn,%C(green) %cr '
+```
