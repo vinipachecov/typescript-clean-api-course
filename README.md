@@ -77,3 +77,9 @@ File example:
 
 - Use husky for commit hooks
 - Use lint-staged to run hooks only on staged files 
+
+### Jest config:
+
+- jest
+- @types/jest
+- ts0jest
