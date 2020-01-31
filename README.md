@@ -82,4 +82,4 @@ File example:
 
 - jest
 - @types/jest
-- ts0jest
+- ts-jest
