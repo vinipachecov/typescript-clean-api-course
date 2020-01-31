@@ -79,7 +79,15 @@ File example:
 - Use lint-staged to run hooks only on staged files 
 
 ### Jest config:
+Add libs 
 
 - jest
 - @types/jest
 - ts-jest
+
+init jest config with:
+```
+jest --init
+```
+
+Select the options
