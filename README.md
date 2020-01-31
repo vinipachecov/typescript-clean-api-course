@@ -49,7 +49,7 @@ Config Example:
 
 
 tsconfig.json file
-```
+```json
 {
     "compilerOptions": {
         "outDir": "./dist",
@@ -60,3 +60,20 @@ tsconfig.json file
     }
 }
 ```
+
+### Eslint configuration
+
+- Usage of the lib eslint-config-standard-typescript to allow standardjs style with typescript
+
+File example:
+```json
+{
+    "extends": "standard-with-typescript",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
+}
+```
+
+- Use husky for commit hooks
+- Use lint-staged to run hooks only on staged files 
