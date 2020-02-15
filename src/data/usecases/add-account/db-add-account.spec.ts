@@ -4,19 +4,23 @@ import { Encrypter } from '../../protocols/encrypter'
 // received values: name, email, password
 // before creating I need to encrypt the password
 
-interface SutTypes {
-  sut: DbAddAccount
-  encrypterStub: Encrypter
-}
-
-const makeSut = (): SutTypes => {
+const makeEncrypter = (): Encrypter => {
   class EncrypterStub {
     async encrypt (value: string): Promise<string> {
       return new Promise(resolve => resolve('hased_password'))
     }
   }
 
-  const encrypterStub = new EncrypterStub()
+  return new EncrypterStub()
+}
+
+interface SutTypes {
+  sut: DbAddAccount
+  encrypterStub: Encrypter
+}
+
+const makeSut = (): SutTypes => {
+  const encrypterStub = makeEncrypter()
   const sut = new DbAddAccount(encrypterStub)
   return {
     sut,
