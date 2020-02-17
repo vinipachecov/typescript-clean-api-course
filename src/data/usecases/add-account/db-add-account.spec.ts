@@ -1,5 +1,4 @@
-import { DbAddAccount } from './db-add-account'
-import { Encrypter } from '../../protocols/encrypter'
+import { DbAddAccount, Encrypter } from './db-add-account-protocols'
 
 // received values: name, email, password
 // before creating I need to encrypt the password
