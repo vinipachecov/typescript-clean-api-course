@@ -1,5 +1,8 @@
 # Nodejs Typescript TDD Clean Architecture SOLID course
 
+This code is a follow on of the Udemy course NodeJs, Typescript, TDD, Clean Architecture e SOLID of Rodrigo Manguinho. The idea is to give a possible implementation of good practices of Clean Architecture with some good practices of TDD.
+
+
 ### Git Configs
 
 - git config --list: show all config commands
@@ -90,6 +93,16 @@ init jest config with:
 jest --init
 ```
 
-Select the options
+The author also uses different jest configs for unit testing and integration:
+
+- .spec for unit testing
+- .test for integration test
+
+
+### Design
+
+By decoupling code into DDD with use cases and creating adapters behind the usage of libraries, the code becomes more resilient and sustainable due to the nature of the testing.
+Doing this makes our code capable of changing libraries if we think it is useful without the fear of breaking any important feature of our Software. This is only possible when we wrap libraries into Adapters which will interfere on how the library (i.e encrypting, email validation etc...) calls the actual data and returns it. 
+
 
 
