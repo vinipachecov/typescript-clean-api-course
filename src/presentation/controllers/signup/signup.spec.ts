@@ -73,7 +73,7 @@ describe('SignUp Controller', () => {
     expect(httpResponse).toEqual(badRequest(new MissingParamError('name')))
   })
 
-  test('Should return 400 if no name is provided', async () => {
+  test('Should return 400 if no email is provided', async () => {
     // sut = system under test
     const { sut } = makeSut()
     const httpRequest = {
@@ -178,12 +178,11 @@ describe('SignUp Controller', () => {
   })
   test('Should return 500 if AddAccount throws', async () => {
     const { sut, addAccountStub } = makeSut()
-    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(() => {
-      throw new Promise((resolve, reject) => reject(new Error()))
+    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(async () => {
+      return new Promise((resolve, reject) => reject(new Error()))
     })
     const httpResponse = await sut.handle(makeFakeRequest())
-    expect(httpResponse.statusCode).toBe(500)
-    expect(httpResponse.body).toEqual(new ServerError(null))
+    expect(httpResponse).toEqual(serverError(new ServerError(null)))
   })
   test('Should return 200 if valid data is provided', async () => {
     const { sut } = makeSut()
