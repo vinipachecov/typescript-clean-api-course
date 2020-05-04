@@ -1,3 +1,6 @@
+// Keep every interface responsible for a single method
+// to keep the Interface Segregation Principle from SOL-I-D
+
 export interface LogErrorRepository {
-  log (stack: string): Promise<void>
+  logError(stack: string): Promise<void>
 }
