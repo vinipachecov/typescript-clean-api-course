@@ -1,7 +1,6 @@
 import { SignUpController } from './signup'
 import {
   MissingParamError,
-  InvalidParamError,
   ServerError
 } from '../../errors'
 import { EmailValidator, AddAccountModel, AddAccount, AccountModel, Validation } from './signup-protocols'
@@ -86,19 +85,6 @@ describe('SignUp Controller', () => {
     const httpRequest = makeFakeRequest()
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse).toEqual(serverError(new ServerError(null)))
-  })
-  test('Should return 400 if no passwordConfirmation fails', async () => {
-    const { sut } = makeSut()
-    const httpRequest = {
-      body: {
-        name: 'any_name',
-        email: 'any_email',
-        password: 'any_password',
-        passwordConfirmation: 'invalid_password'
-      }
-    }
-    const httpResponse = await sut.handle(httpRequest)
-    expect(httpResponse).toEqual(badRequest(new InvalidParamError('passwordConfirmation')))
   })
 
   test('Should call AddAccount with correct values', async () => {
