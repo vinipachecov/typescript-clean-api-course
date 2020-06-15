@@ -4,7 +4,9 @@
   "description": "### Git Configs",
   "main": "index.js",
   "scripts": {
-    "start": "sucrase-node src/main/server.ts",
+    "build": "rimraf dist && tsc",
+    "start": "node dist/main/server.js",
+    "dev": "sucrase-node src/main/server.ts",
     "test": "jest --passWithNoTests  --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch  -c jest-unit-config.js",
@@ -44,6 +46,7 @@
     "husky": "^4.2.1",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.2",
+    "rimraf": "^3.0.2",
     "sucrase": "^3.12.1",
     "supertest": "^4.0.2",
     "ts-jest": "^25.1.0",
@@ -52,7 +55,6 @@
   "dependencies": {
     "bcrypt": "^3.0.8",
     "express": "^4.17.1",
-    "fast-glob": "^3.2.2",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.3",
     "validator": "^12.2.0"
