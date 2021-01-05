@@ -101,7 +101,7 @@ The author also uses different jest configs for unit testing and integration:
 
 ### Design
 
-By decoupling code into DDD with use cases and creating adapters behind the usage of libraries, the code becomes more resilient and sustainable due to the nature of the testing.
+By decoupling code with clean code practices by using use cases and creating adapters to decouple libraries from core logic. Code becomes more cohesive and maintainable due to the nature of the testing.
 Doing this makes our code capable of changing libraries if we think it is useful without the fear of breaking any important feature of our Software. This is only possible when we wrap libraries into Adapters which will interfere on how the library (i.e encrypting, email validation etc...) calls the actual data and returns it. 
 
 
